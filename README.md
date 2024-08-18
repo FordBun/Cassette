@@ -1,11 +1,13 @@
 # Cassettes Classification
 This project uses the MAX78000 FTHR to classify 8 types of wafer cassettes by applying a cat vs dog project.  
 More information about MAX78000/MAX78002, Software, Example [here](https://github.com/MaximIntegratedAI).
+
 ## Table of Contents
-1. Setup for window system
+1. [Setup for window system](##Setup-for-window-system)
 2. Collect the dataset
 3. Prepare dataset
-4. Development project 
+4. [Development project](##Development-projeect)
+
 ## Setup for window system
 1. Analog Devices MSDK (MaximMSDK) [Download Analog Devices MSDK](https://analogdevicesinc.github.io/msdk//USERGUIDE/#gui-installation)
 
@@ -172,47 +174,156 @@ Edit the example code folder named **Imgcapture** with two capture commands: Sho
 - The shoot command is used to take one image at a time. You can press the switch to take an image.
 - The stream command is used to continuously take images.
 
-Open Imgcapture folder 
+Open Imgcapture folder.
 ![1](image-6.png)
 ![2,3](image-7.png)
-Flash and run code
+
+Flash and run code.
 ![4](image-8.png)
 ![alt text](image-9.png)
-Click open cmd
+
+Click open cmd.
 ![5](image-10.png)
-Go to utils folder utils
+
+Go to utils folder utils.
 ![6](image-11.png)
 ![alt text](image-12.png)
-Run : python console.py com X(change X to your comport)
+
+Run : python console.py com X(change X to your comport).
 ![7](image-14.png)
 ![alt text](image-15.png)
-Now the program is ready to receive commands.    
-Sent command shoot (take one picture)
+Now the program is ready to receive commands.  
+  
+Sent command shoot (take one picture).
 ![8](image-16.png)
 Take a photo by pressing the switch and save successfully.
 (Connect P0_19 and GND to switch.)
 ![alt text](image-18.png)
-If want to stop sent command shoot again
+
+If want to stop sent command shoot again.
 ![alt text](image-20.png)
-Sent command stream (Continuous take pictures)
+
+Sent command stream (Continuous take pictures).
 ![alt text](image-21.png)
 ![alt text](image-22.png)
-If want to stop sent command stream again 
+
+If want to stop sent command stream again. 
 ![alt text](image-23.png)
+
 Images store here
 ![alt text](image-24.png)
+
+Images of each class should be separated for ease of use on roboflow.
+![alt text](image-25.png)
+
+Part of the code that was edited  
+Edit the **console.py** file by adding the datetime function.
+![alt text](image-28.png)
+
+Edit the **console.h** file by adding the CMD_SHOOT
+![alt text](image-29.png)
+
+Edit the **console.c** file by adding the shoot
+![alt text](image-30.png)
+
+Edit the **Main.c file**
+- By adding the check CMD_STREAM and another_function.
+![alt text](image-31.png)
+![alt text](image-32.png)
+
+- By adding the check CMD_SHOOT and triggerswitch.
+![alt text](image-33.png)
+![alt text](image-34.png)
+
 ## Prepare dataset
+Used [Roboflow](https://roboflow.com/) to create augmented images. [Document](https://docs.roboflow.com/)
 
-## Development projeect 
-**1. Training**
+Sign In and create your [work space](https://docs.roboflow.com/workspaces/roboflow-workspaces)
+![alt text](image-35.png)
 
-Start training the model
+Create New project.
+![alt text](image-36.png)
+
+This project is classification sigle-lable.
+![alt text](image-37.png)
+
+Upload folder.
+![alt text](image-38.png)
+![alt text](image-39.png)
+![alt text](image-40.png)
+
+Save and continue.
+![alt text](image-41.png)
+
+Split the dataset.
+![alt text](image-42.png)
+
+Close resize.
+![alt text](image-43.png)
+
+Add Augmentation.
+![alt text](image-44.png)
+
+Choose the version size and create.
+![alt text](image-45.png)
+
+Export the dataset.
+![alt text](image-46.png)
+![alt text](image-47.png)
+
+Bring Zip file to.../ai8x-training/data, then extract file. Rename the folder if the name is not cassette; change it to cassette.  
+Inside the folder cassette.
+![alt text](image-48.png)
+
+## Development project 
+![overview flow](image-49.png)
+**1. Training**  
+
+Copy file ai8x-training/dataset/cassette.py to your path
+The files that have been edited include: 
+![cassette1.py](image-50.png)
+![cassette2.py](image-51.png)
+![cassette3.py](image-52.png)
+
+Copy file ai8x-training/models/ai85_cd.py to your path
+The files that have been edited include:
+![ai85_cd.py](image-53.png)
+
+Start training the model, Open Windows Powershell
+Go to your directory.
+```
+cd .../ai8x-training
+```
+
+Activate environment. 
+```
+.\venv\Scripts\activate
+```
+
 ```
 python train.py --epochs 100 --optimizer Adam --lr 0.001 --wd 0 --deterministic --compress policies/schedule-catsdogs.yaml --qat-policy policies/qat_policy_cd.yaml --model ai85cdnet --dataset cassette --confusion --param-hist --embedding --device MAX78000 --validation-split 0.15 --batch-size 64  --enable-tensorboard
 ```
+During training
+![alt text](image-54.png)
+
+View graph during training on Tenserboard.Use second terminal window.
+```
+(ai8x-training) > tensorboard --logdir='your logs path'
+```
+Open Google and paste http://localhost:6006/ in the search bar 
+![alt text](image-56.png)
+
 When training complete Check point will store …/ai8x-training-logs
-![After trained](image.png)
+![After trained](image-55.png)
+
+Rename qat_best.pth to qat_best_cassette.pth then copy and paste the file in the folder..../ai8x-synthesis/trained
 
 **2. Synthesis**
+
+```
+```
+
+```
+```
 
 **3. Deployment**
