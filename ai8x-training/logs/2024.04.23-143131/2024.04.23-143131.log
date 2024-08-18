@@ -1,5 +1,0 @@
-2024-04-23 14:31:31,508 - Log file for this run: C:\BChimgam\projectAI\ai8x-training\logs\2024.04.23-143131\2024.04.23-143131.log
-2024-04-23 14:31:31,579 - Optimizer Type: <class 'torch.optim.adam.Adam'>
-2024-04-23 14:31:31,579 - Optimizer Args: {'lr': 0.001, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0, 'amsgrad': False}
-2024-04-23 14:31:31,583 - 
-2024-04-23 14:31:31,583 - Log file for this run: C:\BChimgam\projectAI\ai8x-training\logs\2024.04.23-143131\2024.04.23-143131.log
