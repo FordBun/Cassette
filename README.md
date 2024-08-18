@@ -218,76 +218,76 @@ Images of each class should be separated for ease of use on roboflow.
 
 Part of the code that was edited  
 Edit the **console.py** file by adding the datetime function.
-![alt text](image-28.png)
+![alt text](image-26.png)
 
 Edit the **console.h** file by adding the CMD_SHOOT
-![alt text](image-29.png)
+![alt text](image-27.png)
 
 Edit the **console.c** file by adding the shoot
-![alt text](image-30.png)
+![alt text](image-28.png)
 
 Edit the **Main.c file**
 - By adding the check CMD_STREAM and another_function.
-![alt text](image-31.png)
-![alt text](image-32.png)
+![alt text](image-29.png)
+![alt text](image-30.png)
 
 - By adding the check CMD_SHOOT and triggerswitch.
-![alt text](image-33.png)
-![alt text](image-34.png)
+![alt text](image-31.png)
+![alt text](image-32.png)
 
 ## Prepare dataset
 Used [Roboflow](https://roboflow.com/) to create augmented images. [Document](https://docs.roboflow.com/)
 
 Sign In and create your [work space](https://docs.roboflow.com/workspaces/roboflow-workspaces)
-![alt text](image-35.png)
+![alt text](image-33.png)
 
 Create New project.
-![alt text](image-36.png)
+![alt text](image-34.png)
 
 This project is classification sigle-lable.
-![alt text](image-37.png)
+![alt text](image-35.png)
 
 Upload folder.
+![alt text](image-36.png)
+![alt text](image-37.png)
 ![alt text](image-38.png)
-![alt text](image-39.png)
-![alt text](image-40.png)
 
 Save and continue.
-![alt text](image-41.png)
+![alt text](image-39.png)
 
 Split the dataset.
-![alt text](image-42.png)
+![alt text](image-40.png)
 
 Close resize.
-![alt text](image-43.png)
+![alt text](image-41.png)
 
 Add Augmentation.
-![alt text](image-44.png)
+![alt text](image-42.png)
 
 Choose the version size and create.
-![alt text](image-45.png)
+![alt text](image-43.png)
 
 Export the dataset.
-![alt text](image-46.png)
-![alt text](image-47.png)
+![alt text](image-44.png)
+![alt text](image-45.png)
 
 Bring Zip file to.../ai8x-training/data, then extract file. Rename the folder if the name is not cassette; change it to cassette.  
 Inside the folder cassette.
-![alt text](image-48.png)
+![alt text](image-46.png)
 
 ## Development project 
-![overview flow](image-49.png)
+![alt text](image-47.png)
 **1. Training**  
 
 Copy file ai8x-training/dataset/cassette.py to your path
 The files that have been edited include: 
-![cassette1.py](image-50.png)
-![cassette2.py](image-51.png)
-![cassette3.py](image-52.png)
+![alt text](image-48.png)
+![alt text](image-49.png)
+![alt text](image-50.png)
 
 Copy file ai8x-training/models/ai85_cd.py to your path
 The files that have been edited include:
-![ai85_cd.py](image-53.png)
+![alt text](image-51.png)
 
 Start training the model, Open Windows Powershell
 Go to your directory.
@@ -304,19 +304,19 @@ Activate environment.
 python train.py --epochs 100 --optimizer Adam --lr 0.001 --wd 0 --deterministic --compress policies/schedule-catsdogs.yaml --qat-policy policies/qat_policy_cd.yaml --model ai85cdnet --dataset cassette --confusion --param-hist --embedding --device MAX78000 --validation-split 0.15 --batch-size 64  --enable-tensorboard
 ```
 During training
-![alt text](image-54.png)
+![alt text](image-52.png)
 
 View graph during training on Tenserboard.Use second terminal window.
 ```
 (ai8x-training) > tensorboard --logdir='your logs path'
 ```
 Open Google and paste http://localhost:6006/ in the search bar 
-![alt text](image-56.png)
+![alt text](image-53.png)
 
 When training complete Check point will store …/ai8x-training-logs
-![After trained](image-55.png)
+![alt text](image-54.png)
 
-Rename qat_best.pth to qat_best_cassette.pth then copy and paste the file in the folder..../ai8x-synthesis/trained
+Rename qat_best.pth to qat_best_cassette.pth then copy and paste file in folder .../ai8x-synthesis/trained 
 
 **2. Synthesis**
 

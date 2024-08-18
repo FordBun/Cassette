@@ -1,0 +1,67 @@
+2024-05-13 11:57:13,902 - Log file for this run: C:\BChimgam\projectAI\ai8x-training\logs\2024.05.13-115713\2024.05.13-115713.log
+2024-05-13 11:57:13,974 - Optimizer Type: <class 'torch.optim.sgd.SGD'>
+2024-05-13 11:57:13,974 - Optimizer Args: {'lr': 0.001, 'momentum': 0.9, 'dampening': 0, 'weight_decay': 0.0001, 'nesterov': False}
+2024-05-13 11:57:14,047 - Reading compression schedule from: policies/schedule.yaml
+2024-05-13 11:57:14,051 - Dataset sizes:
+	training=54000
+	validation=6000
+	test=10000
+2024-05-13 11:57:14,052 - 
+
+2024-05-13 11:57:14,052 - Training epoch: 54000 samples (256 per mini-batch)
+2024-05-13 11:57:26,651 - Epoch: [0][   10/  211]    Overall Loss 2.309112    Objective Loss 2.309112                                        LR 0.001000    Time 1.259827    
+2024-05-13 11:57:32,590 - Epoch: [0][   20/  211]    Overall Loss 2.309998    Objective Loss 2.309998                                        LR 0.001000    Time 0.926704    
+2024-05-13 11:57:38,509 - Epoch: [0][   30/  211]    Overall Loss 2.308714    Objective Loss 2.308714                                        LR 0.001000    Time 0.815063    
+2024-05-13 11:57:44,418 - Epoch: [0][   40/  211]    Overall Loss 2.306665    Objective Loss 2.306665                                        LR 0.001000    Time 0.759013    
+2024-05-13 11:57:50,269 - Epoch: [0][   50/  211]    Overall Loss 2.304516    Objective Loss 2.304516                                        LR 0.001000    Time 0.724205    
+2024-05-13 11:57:56,294 - Epoch: [0][   60/  211]    Overall Loss 2.303173    Objective Loss 2.303173                                        LR 0.001000    Time 0.703919    
+2024-05-13 11:58:02,642 - Epoch: [0][   70/  211]    Overall Loss 2.301505    Objective Loss 2.301505                                        LR 0.001000    Time 0.694036    
+2024-05-13 11:58:08,785 - Epoch: [0][   80/  211]    Overall Loss 2.299951    Objective Loss 2.299951                                        LR 0.001000    Time 0.684041    
+2024-05-13 11:58:15,485 - Epoch: [0][   90/  211]    Overall Loss 2.298653    Objective Loss 2.298653                                        LR 0.001000    Time 0.682454    
+2024-05-13 11:58:21,801 - Epoch: [0][  100/  211]    Overall Loss 2.297501    Objective Loss 2.297501                                        LR 0.001000    Time 0.677369    
+2024-05-13 11:58:27,904 - Epoch: [0][  110/  211]    Overall Loss 2.296485    Objective Loss 2.296485                                        LR 0.001000    Time 0.671259    
+2024-05-13 11:58:33,988 - Epoch: [0][  120/  211]    Overall Loss 2.295524    Objective Loss 2.295524                                        LR 0.001000    Time 0.666012    
+2024-05-13 11:58:40,109 - Epoch: [0][  130/  211]    Overall Loss 2.294678    Objective Loss 2.294678                                        LR 0.001000    Time 0.661865    
+2024-05-13 11:58:46,491 - Epoch: [0][  140/  211]    Overall Loss 2.293959    Objective Loss 2.293959                                        LR 0.001000    Time 0.660173    
+2024-05-13 11:58:52,491 - Epoch: [0][  150/  211]    Overall Loss 2.292838    Objective Loss 2.292838                                        LR 0.001000    Time 0.656162    
+2024-05-13 11:58:58,908 - Epoch: [0][  160/  211]    Overall Loss 2.291997    Objective Loss 2.291997                                        LR 0.001000    Time 0.655253    
+2024-05-13 11:59:05,053 - Epoch: [0][  170/  211]    Overall Loss 2.290911    Objective Loss 2.290911                                        LR 0.001000    Time 0.652845    
+2024-05-13 11:59:11,140 - Epoch: [0][  180/  211]    Overall Loss 2.289886    Objective Loss 2.289886                                        LR 0.001000    Time 0.650385    
+2024-05-13 11:59:19,489 - Epoch: [0][  190/  211]    Overall Loss 2.288766    Objective Loss 2.288766                                        LR 0.001000    Time 0.660093    
+2024-05-13 11:59:29,347 - Epoch: [0][  200/  211]    Overall Loss 2.287820    Objective Loss 2.287820                                        LR 0.001000    Time 0.676376    
+2024-05-13 11:59:37,972 - Epoch: [0][  210/  211]    Overall Loss 2.286572    Objective Loss 2.286572    Top1 25.390625    Top5 65.234375    LR 0.001000    Time 0.685235    
+2024-05-13 11:59:38,925 - Epoch: [0][  211/  211]    Overall Loss 2.286405    Objective Loss 2.286405    Top1 26.008065    Top5 65.322581    LR 0.001000    Time 0.686500    
+2024-05-13 11:59:39,860 - --- validate (epoch=0)-----------
+2024-05-13 11:59:39,860 - 6000 samples (256 per mini-batch)
+2024-05-13 11:59:54,275 - Epoch: [0][   10/   24]    Loss 2.264289    Top1 19.882813    Top5 62.734375    
+2024-05-13 11:59:58,058 - Epoch: [0][   20/   24]    Loss 2.264365    Top1 20.000000    Top5 63.066406    
+2024-05-13 11:59:59,399 - Epoch: [0][   24/   24]    Loss 2.264038    Top1 19.783333    Top5 63.333333    
+2024-05-13 12:00:00,306 - ==> Top1: 19.783    Top5: 63.333    Loss: 2.264
+
+2024-05-13 12:00:00,307 - ==> Confusion:
+[[ 50 114  35 269  17   0  18  95   2   5]
+ [  0 685   0   2   0   0   0   1   0   0]
+ [  8 252  34 232   4   0  29  21   5   1]
+ [  2 207  15 268   4   0  25  51  10   1]
+ [  1 361   8 134   8   0   7  41   1   4]
+ [  3 244   5 176  10   1  15  61   3   0]
+ [  8 351  22 166  11   0  57  14   2   0]
+ [  1 423   1 120   0   0   2  78   0   0]
+ [  6 220  45 234  25   0  17  32   5   0]
+ [  0 346   8 194   5   0   8  52   1   1]]
+
+2024-05-13 12:00:00,314 - ==> Best [Top1: 19.783   Top5: 63.333   Sparsity:0.00   Params: 71148 on epoch: 0]
+2024-05-13 12:00:00,315 - Saving checkpoint to: logs\2024.05.13-115713\checkpoint.pth.tar
+2024-05-13 12:00:00,339 - 
+
+2024-05-13 12:00:00,339 - Training epoch: 54000 samples (256 per mini-batch)
+2024-05-13 12:00:20,722 - Epoch: [1][   10/  211]    Overall Loss 2.261979    Objective Loss 2.261979                                        LR 0.001000    Time 2.038217    
+2024-05-13 12:00:28,552 - Epoch: [1][   20/  211]    Overall Loss 2.260361    Objective Loss 2.260361                                        LR 0.001000    Time 1.410594    
+2024-05-13 12:00:36,457 - Epoch: [1][   30/  211]    Overall Loss 2.259386    Objective Loss 2.259386                                        LR 0.001000    Time 1.203910    
+2024-05-13 12:00:44,453 - Epoch: [1][   40/  211]    Overall Loss 2.257696    Objective Loss 2.257696                                        LR 0.001000    Time 1.102799    
+2024-05-13 12:00:52,117 - Epoch: [1][   50/  211]    Overall Loss 2.256226    Objective Loss 2.256226                                        LR 0.001000    Time 1.035491    
+2024-05-13 12:00:59,679 - Epoch: [1][   60/  211]    Overall Loss 2.254298    Objective Loss 2.254298                                        LR 0.001000    Time 0.988946    
+2024-05-13 12:01:06,477 - Epoch: [1][   70/  211]    Overall Loss 2.252634    Objective Loss 2.252634                                        LR 0.001000    Time 0.944751    
+2024-05-13 12:01:13,843 - Epoch: [1][   80/  211]    Overall Loss 2.250491    Objective Loss 2.250491                                        LR 0.001000    Time 0.918728    
+2024-05-13 12:01:19,343 - 
+2024-05-13 12:01:19,344 - Log file for this run: C:\BChimgam\projectAI\ai8x-training\logs\2024.05.13-115713\2024.05.13-115713.log

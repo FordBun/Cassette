@@ -1,0 +1,55 @@
+2024-05-10 08:36:15,834 - Log file for this run: C:\BChimgam\projectAI\ai8x-training\logs\2024.05.10-083615\2024.05.10-083615.log
+2024-05-10 08:36:15,918 - => loading checkpoint C:/BChimgam/projectAI/ai8x-synthesis/trained/best_mnist_10epoch.pth-q.pth.tar
+2024-05-10 08:36:15,922 - => Checkpoint contents:
++----------------------+-------------+----------+
+| Key                  | Type        | Value    |
+|----------------------+-------------+----------|
+| arch                 | str         | ai85net5 |
+| compression_sched    | dict        |          |
+| epoch                | int         | 9        |
+| extras               | dict        |          |
+| optimizer_state_dict | dict        |          |
+| optimizer_type       | type        | SGD      |
+| state_dict           | OrderedDict |          |
++----------------------+-------------+----------+
+
+2024-05-10 08:36:15,923 - => Checkpoint['extras'] contents:
++-----------------+--------+-------------------+
+| Key             | Type   | Value             |
+|-----------------+--------+-------------------|
+| best_epoch      | int    | 9                 |
+| best_mAP        | int    | 0                 |
+| best_top1       | float  | 75.83333333333333 |
+| clipping_method | str    | MAX_BIT_SHIFT     |
+| current_mAP     | int    | 0                 |
+| current_top1    | float  | 75.83333333333333 |
++-----------------+--------+-------------------+
+
+2024-05-10 08:36:15,924 - Loaded compression schedule from checkpoint (epoch 9)
+2024-05-10 08:36:15,931 - => loaded 'state_dict' from checkpoint 'C:/BChimgam/projectAI/ai8x-synthesis/trained/best_mnist_10epoch.pth-q.pth.tar'
+2024-05-10 08:36:15,941 - Optimizer Type: <class 'torch.optim.sgd.SGD'>
+2024-05-10 08:36:15,941 - Optimizer Args: {'lr': 0.1, 'momentum': 0.9, 'dampening': 0, 'weight_decay': 0.0001, 'nesterov': False}
+2024-05-10 08:36:15,989 - Dataset sizes:
+	test=10000
+2024-05-10 08:36:15,989 - --- test ---------------------
+2024-05-10 08:36:15,990 - 10000 samples (256 per mini-batch)
+2024-05-10 08:36:26,881 - Test: [   10/   40]    Loss 0.548748    Top1 91.640625    Top5 99.492188    
+2024-05-10 08:36:30,217 - Test: [   20/   40]    Loss 0.560416    Top1 90.859375    Top5 99.394531    
+2024-05-10 08:36:33,665 - Test: [   30/   40]    Loss 0.554145    Top1 91.041667    Top5 99.348958    
+2024-05-10 08:36:36,902 - Test: [   40/   40]    Loss 0.556583    Top1 90.990000    Top5 99.410000    
+2024-05-10 08:36:37,532 - ==> Top1: 90.990    Top5: 99.410    Loss: 0.557
+
+2024-05-10 08:36:37,532 - ==> Confusion:
+[[ 932    5    2    0    0   27   11    2    0    1]
+ [   0 1119    4    0    1    0    8    2    0    1]
+ [  16    0  902   64    7    2   26    6    8    1]
+ [   0    0    4  959    2   11    0   18    7    9]
+ [   0    3    0    0  911    0   53    2    0   13]
+ [  13    3    0   43    5  791    5    4   17   11]
+ [  24    5    0    0    5    8  910    0    6    0]
+ [   3    9   20   28    1    0    0  944    0   23]
+ [  25    3   19   14   16   29   26   12  804   26]
+ [  33    5    1   12   32    6    1   80   12  827]]
+
+2024-05-10 08:36:37,533 - 
+2024-05-10 08:36:37,534 - Log file for this run: C:\BChimgam\projectAI\ai8x-training\logs\2024.05.10-083615\2024.05.10-083615.log
