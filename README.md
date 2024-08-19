@@ -3,10 +3,10 @@ This project uses the MAX78000 FTHR to classify 8 types of wafer cassettes by ap
 More information about MAX78000/MAX78002, Software, Example [here](https://github.com/MaximIntegratedAI).
 
 ## Table of Contents
-1. [Setup for window system](##Setup-for-window-system)
-2. Collect the dataset
-3. Prepare dataset
-4. [Development project](##Development-projeect)
+1. [Setup for window system](#setup-for-window-system)
+2. [Collect the dataset](#collect-the-dataset)
+3. [Prepare dataset](#prepare-dataset)
+4. [Development project](#development-project)
 
 ## Setup for window system
 1. Analog Devices MSDK (MaximMSDK) [Download Analog Devices MSDK](https://analogdevicesinc.github.io/msdk//USERGUIDE/#gui-installation)
@@ -295,7 +295,7 @@ Go to your directory.
 cd .../ai8x-training
 ```
 
-Activate environment. 
+Activate training environment. 
 ```
 .\venv\Scripts\activate
 ```
@@ -317,6 +317,54 @@ When training complete Check point will store …/ai8x-training-logs
 ![alt text](image-54.png)
 
 Rename qat_best.pth to qat_best_cassette.pth then copy and paste file in folder .../ai8x-synthesis/trained 
+
+Model Quantization  
+Deactivate ai8x-training environment.
+```
+deactivate
+```
+
+Switch to the directory ai8x-synthesis
+```
+cd ..
+cd ai8x-synthesis
+```  
+
+Active synthesis environment
+```
+.\venv\Scripts\activate
+```
+Run this command
+```
+python quantize.py trained/qat_best_cassette.pth.tar trained/qat_best_cassette_q.pth.tar --device MAX78000 -v
+```
+![alt text](image-55.png)
+
+Will receive qat_best_cassette_q.pth
+![alt text](image-56.png)
+
+Model Evaluation  
+Deactive synthesis environment
+```
+deactivate
+```
+
+Switch to the directory ai8x-training
+```
+cd ..
+cd ai8x-training
+```  
+Activate training environment. 
+```
+.\venv\Scripts\activate
+```
+
+Run this command
+```
+python train.py --model ai85cdnet --dataset cassette --confusion --evaluate --exp-load-weights-from C:/BChimgam/projectAI/ai8x-synthesis/trained/qat_best_cassette_q.pth.tar -8 --device MAX78000 --save-sample 2
+```
+![alt text](image-57.png)
+![alt text](image-58.png)
 
 **2. Synthesis**
 
