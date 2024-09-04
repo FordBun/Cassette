@@ -497,5 +497,5 @@ Example code to read UART, such as used to communicate with a PC or other microc
 Don't forget change board before flash and run code to the board.
 ![alt text](images/image-4.png)
 
-Result on TFT
+Result on TFT  
 ![alt text](images/image-71.png)
